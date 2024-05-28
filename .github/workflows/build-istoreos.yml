@@ -40,10 +40,10 @@ jobs:
           - wndr3700v4
         os:
           - ubuntu-22.04
-        include:
-          - REPO_BRANCH: istoreos-23.05
-            ARCHITECTURE: x86-alpha
-            os: ubuntu-22.04
+        #include:
+          #- REPO_BRANCH: istoreos-23.05
+         #   ARCHITECTURE: x86-alpha
+          #  os: ubuntu-22.04
 
       fail-fast: false
 
