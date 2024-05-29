@@ -127,9 +127,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        rm -rf feeds/packages/net/v2ray-geodata
-        git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-        git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
     - name: SSH 连接到 Actions
       uses: P3TERX/ssh2actions@v1.0.0
@@ -146,6 +143,9 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
+        rm -rf feeds/packages/net/v2ray-geodata
+        git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+        git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
     - name: 编译固件
       id: compile
